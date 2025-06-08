@@ -1,5 +1,7 @@
 body {
-    background-color: rgb(149, 149, 255);
+    background-image: url("https://res.cloudinary.com/dbuwekmex/image/upload/v1749325578/51572133135_b2674755a3_b_cle8ju.jpg");
+    background-repeat: none;
+    background-size: 100%;
     font-family: josefin sans, sans-serif;
     display: flex;
     flex-direction: column;
@@ -7,7 +9,7 @@ body {
 }
 
 #title-bar {
-    background-color: rgba(20, 100, 255, 1);
+    background-color: rgba(20, 100, 255, .5);
     width: 100%;
     position: fixed;
     left: 0;
@@ -17,8 +19,22 @@ body {
     align-items: center;
 }
 
-h1 {
-    margin-left: 10%;
+h1, h2 {
+    margin-left: 5%;
+}
+#title-bar > select {
+    margin-left: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: josefin sans, sans-serif;
+    background-color: rgba(20, 100, 255, .5);
+    padding: 5px 10px;
+    border: 2px solid blue;
+    border-radius: 20px;
+}
+
+#title-bar > select:hover {
+    border: 2px solid darkblue;
 }
 
 #dealer-cards, #player-cards, #collected-player-cards, #collected-dealer-cards {
@@ -30,7 +46,7 @@ h1 {
 }
 
 hr {
-    border: 2px solid rgba(20, 100, 255, 1);
+    border: 2px solid rgba(20, 100, 255, .5);
     border-radius: 4px;
     width: 100%;
 }
@@ -41,8 +57,8 @@ hr {
     font-weight: bold;
 }
 
-.dealer-card, .player-card, #deck, .face-card {
-    background-image: url("https://res.cloudinary.com/dbuwekmex/image/upload/v1748872353/Screenshot_2025-06-02_9.51.19_AM_insiek.png");
+.dealer-card, #deck {
+
     background-size: cover;
     background-repeat: none;
     min-width: 65px;
@@ -50,6 +66,23 @@ hr {
     height: 100px;
     margin: 10px;
     border-radius: 5px;
+}
+
+.face-card, .player-card {
+    background-color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 65px;
+    max-width: 65px;
+    height: 100px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.face-card:hover {
+    cursor: pointer;
+    background-color: rgb(167, 166, 166);
 }
 
 .buttons {
@@ -65,7 +98,7 @@ button {
     padding: 10px 20px;
     border-radius: 30px;
     border: 3px solid blue;
-    background-color: rgba(20, 100, 255, 1);
+    background-color: rgba(20, 100, 255, .5);
     text-align: center;
     margin: 20px auto;
 }
@@ -73,17 +106,4 @@ button {
 button:hover {
     cursor: pointer;
     background-color: blue;
-}
-
-.face-card {
-    background-image: none;
-    background-color: white;
-    font-size: 30px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.face-card:hover {
-    cursor: pointer;
-    background-color: rgb(167, 166, 166);
 }
