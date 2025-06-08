@@ -15,6 +15,7 @@ let playerCardValues = [];
 let lastNumCall;
 let fishFirst = false;
 let dealerTurn;
+let cardsDealt = false;
 
 const updateCardId = () => {
     const dealerCards = document.querySelectorAll(".dealer-card");
@@ -91,7 +92,6 @@ const cardClick = (target, id) => {
     for(let i = dealerCardValues.length - 1; i >= 0; i--) {
         if(dealerCardValues[i] === playerCardValues[id] && firstMatch) {
             const dealerCards = document.querySelectorAll(".dealer-card");
-            const playerCards = document.querySelectorAll(".player-card");
             console.log("--problem point passed--");
             console.log("Card clicked match: ", dealerCardValues[i]);
             target.classList.remove("player-card");
@@ -238,8 +238,12 @@ const dealerGoFish = () => {
 
 
 dealBtn.addEventListener("click", () => {
-    dealPlayerCards();
-    return;
+    if(!cardsDealt) {
+        dealPlayerCards();
+        return;
+    } else if(cardsDealt) {
+        return;
+    };
 });
 
 
