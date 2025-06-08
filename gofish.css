@@ -69,6 +69,7 @@ hr {
 }
 
 .face-card, .player-card {
+    background-image: none !important;
     background-color: white;
     font-size: 30px;
     font-weight: bold;
@@ -80,7 +81,7 @@ hr {
     border-radius: 5px;
 }
 
-.face-card:hover {
+.player-card:hover {
     cursor: pointer;
     background-color: rgb(167, 166, 166);
 }

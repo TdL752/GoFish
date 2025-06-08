@@ -185,18 +185,19 @@ const opAi = () => {
     setTimeout(() => {
         for(let i = playerCardValues.length - 1; i >= 0; i--) {
             if(playerCardValues[i] === pickCardValue) {
+                const dealerCards = document.querySelectorAll(".dealer-card");
                 console.log("card match", playerCardValues[i]);
                 playerCardValues.splice(i, 1);
                 dealerCardValues.splice(randomNum, 1);
                 dealerCollectedCards.appendChild(document.getElementById(`dealer-${randomNum}`));
-                document.getElementById(`${i}`).remove();
-                document.getElementById(`dealer-${randomNum}`).classList.remove("dealer-card");
                 document.getElementById(`dealer-${randomNum}`).classList.add("face-card");
                 document.getElementById(`dealer-${randomNum}`).innerHTML = `
                     <p>
                         ${pickCardValue}
                     </p>
                 `;
+                document.getElementById(`dealer-${randomNum}`).classList.remove("dealer-card");
+                document.getElementById(`${i}`).remove();
                 dealerFish = false;
                 dealerTurn = true;
                 console.log("player array after match: ", playerCardValues);
